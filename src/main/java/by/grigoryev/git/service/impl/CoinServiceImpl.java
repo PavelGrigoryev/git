@@ -35,7 +35,7 @@ public class CoinServiceImpl implements CoinService {
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToFlux(Ticker.class)
-                .flatMap(ticker -> coinRepository.saveAll(ticker.getData()))
+                .flatMap(ticker -> coinRepository.saveAll(ticker.data()))
                 .log("findAll");
     }
 }
