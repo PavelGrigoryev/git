@@ -17,8 +17,13 @@ public class CoinController {
     private final CoinService coinService;
 
     @GetMapping("/{id}")
-    public  Flux<Coin> findById(@PathVariable String id) {
+    public Flux<Coin> findById(@PathVariable String id) {
         return coinService.findById(id);
+    }
+
+    @GetMapping
+    Flux<Coin> findAll() {
+        return coinService.findAll();
     }
 
 }

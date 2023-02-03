@@ -6,5 +6,6 @@ import reactor.core.publisher.Flux;
 public interface CoinService {
 
     Flux<Coin> findById(String id);
+    Flux<Coin> findAll();
 
 }
