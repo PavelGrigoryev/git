@@ -1,0 +1,12 @@
+package by.grigoryev.git.service;
+
+import by.grigoryev.git.model.Coin;
+import reactor.core.publisher.Flux;
+
+public interface CoinService {
+
+    Flux<Coin> findById(String id);
+
+    Flux<Coin> findAll();
+
+}

@@ -1,0 +1,6 @@
+### findById
+GET http://localhost:8080/coins/90,80,48543
+
+### findAll
+GET http://localhost:8080/coins
+Accept: application/json
