@@ -18,4 +18,5 @@ public class Coin {
 
     @JsonProperty("price_usd")
     private BigDecimal price;
+
 }

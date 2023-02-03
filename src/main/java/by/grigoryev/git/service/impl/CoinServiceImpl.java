@@ -28,6 +28,7 @@ public class CoinServiceImpl implements CoinService {
                 .log("findById: " + id);
     }
 
+    @Override
     public Flux<Coin> findAll() {
         WebClient webClient = WebClient.create();
         return webClient.get()
