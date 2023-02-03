@@ -1,6 +1,7 @@
 package by.grigoryev.git.service.impl;
 
 import by.grigoryev.git.model.Coin;
+import by.grigoryev.git.model.Ticker;
 import by.grigoryev.git.repository.CoinRepository;
 import by.grigoryev.git.service.CoinService;
 import lombok.RequiredArgsConstructor;
@@ -22,8 +23,8 @@ public class CoinServiceImpl implements CoinService {
                 .uri("https://api.coinlore.net/api/tickers/")
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
-                .bodyToFlux(Coin.class)
-                .flatMap(coinRepository::save)
+                .bodyToFlux(Ticker.class)
+                .flatMap(ticker -> coinRepository.saveAll(ticker.getData()))
                 .log("findAll");
     }
 }
